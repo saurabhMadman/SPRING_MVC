@@ -22,7 +22,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 		//session from hibernate
 		Session currentSession =sessionFactory.getCurrentSession();
 		//Query
-		Query<Customer> query =currentSession.createQuery("from Customer order by first_name",Customer.class);
+		Query<Customer> query =currentSession.createQuery("from Customer order by firstName",Customer.class);
 		//ResultSet
 		List<Customer> customers = query.getResultList();
 			
@@ -53,5 +53,36 @@ public class CustomerDAOImpl implements CustomerDAO {
 		query.executeUpdate();
 		
 	}
+
+	    @Override
+     public List<Customer> searchCustomers(String theSearchName) {
+
+	        // get the current hibernate session
+	        Session currentSession = sessionFactory.getCurrentSession();
+	        
+	        Query<Customer> theQuery = null;
+	        
+	        //
+	        // only search by name if theSearchName is not empty
+	        //
+	        if (theSearchName != null && theSearchName.trim().length() > 0) {
+
+	            // search for firstName or lastName ... case insensitive
+	            theQuery =currentSession.createQuery("from Customer where lower(firstName) like :theName or lower(lastName) like :theName", Customer.class);
+	            theQuery.setParameter("theName", "%" + theSearchName.toLowerCase() + "%");
+
+	        }
+	        else {
+	            // theSearchName is empty ... so just get all customers
+	            theQuery =currentSession.createQuery("from Customer order by first_name", Customer.class);            
+	        }
+	        
+	        // execute query and get result list
+	        List<Customer> customers = theQuery.getResultList();
+	                
+	        // return the results        
+	        return customers;
+	        
+	    }
 
 }

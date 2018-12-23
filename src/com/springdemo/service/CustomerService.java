@@ -14,4 +14,6 @@ public interface CustomerService{
 
 	public void delete(int theid);
 
+	public List<Customer> searchCustomers(String theSearchName);
+
 }
