@@ -1,4 +1,4 @@
-#Spring Data JPA with Hibernate using MySql Example
+#Spring MVC ,JPA with Hibernate using MySql Example
 #This project depicts the Spring Boot Example with Spring Data JPA with Hibernate using MySql Example.
 #UI is Build on JSP and JSTL Libraries
 
