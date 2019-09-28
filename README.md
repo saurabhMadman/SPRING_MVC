@@ -17,19 +17,14 @@ This Project shows the list of Customers which are stored in the MySql Database.
 Libraries used
 
 Spring Boot
-
 Spring MVC (Spring Web)
-
 Spring Data JPA with Hibernate
-
 MySql
+JSTL library
 
 Tools used
-
 Git 2.10.0
-
 IntelliJ IDEA 2017.1
-
 MySql running locally
 
 Compilation Command
