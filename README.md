@@ -3,7 +3,7 @@
 #UI is Build on JSP and JSTL Libraries
 
 Description
-This Project shows the list of Customers which are stored in the MySql Database. Using the following endpoints, different operations can be achieved:
+This Project is Customers Traking System which are stored in the MySql Database. Using the following endpoints, different operations can be achieved:
 
 /customer/list - This returns the list of Customer in the Users table which is created in MySql Table (users)
 
